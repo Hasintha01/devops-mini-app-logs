@@ -25,3 +25,7 @@ htmlcov/
 
 # OS
 Thumbs.db
+
+# Setup Guides (keep local only)
+AWS_SETUP_GUIDE.md
+GUIDE.md
