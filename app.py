@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 import logging
 import boto3
 import os
@@ -54,6 +54,17 @@ def test_log():
     logger.warning('This is a warning log')
     logger.error('This is an error log for testing')
     return {"message": "Logs sent", "s3_enabled": ENABLE_S3_LOGGING}, 200
+
+@app.route("/users")
+def users():
+    """Return a list of sample users"""
+    logger.info('Users endpoint accessed')
+    sample_users = [
+        {"id": 1, "name": "Alice", "role": "Developer"},
+        {"id": 2, "name": "Bob", "role": "DevOps Engineer"},
+        {"id": 3, "name": "Charlie", "role": "System Admin"}
+    ]
+    return jsonify(sample_users)
 
 if __name__ == "__main__":
     logger.info('Starting DevOps Mini App...')
