@@ -41,7 +41,7 @@ if ENABLE_S3_LOGGING:
 @app.route("/")
 def home():
     logger.info('Home endpoint accessed')
-    return "Hello from DevOps on AWS 🚀 (with S3 Logging)"
+    return "Hello from DevOps on AWS 🚀 (with S3 Logging) - Auto-Deployed via GitHub Actions!"
 
 @app.route("/health")
 def health():
